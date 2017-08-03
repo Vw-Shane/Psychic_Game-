@@ -14,15 +14,17 @@ document.onkeypress = function(event) {
     console.log(random);
     
     
-    if (userGuess === random ) { numberofWins ++;
+    if (userGuess === random ) { numberofWins ++; whatsTyped = []; guessesLeft= 9;
     } else if (userGuess != random) {guessesLeft = guessesLeft -1;}
    
-    if(guessesLeft === 0) {alert("You lost");}
+    if(guessesLeft === 0) {alert("You lost");  guessesLeft= 9; numberoflosses ++; whatsTyped = [];}
     
     var guessLetteres = "<p>You chose: " + whatsTyped + "</p>";
     var wins = "<p>Wins: " + numberofWins + "</p>";
     var losses = "<p>Losses: " + numberoflosses + "</p>";
     var guess = "<p>Guess Left: " + guessesLeft + "</p>";
+   
+
     document.querySelector("#guessLetteres").innerHTML = guessLetteres;
     document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#losses").innerHTML = losses;
