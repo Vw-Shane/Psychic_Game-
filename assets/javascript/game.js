@@ -17,7 +17,7 @@ document.onkeypress = function(event) {
     if (userGuess === random ) { numberofWins ++; whatsTyped = []; guessesLeft= 9;
     } else if (userGuess != random) {guessesLeft = guessesLeft -1;}
    
-    if(guessesLeft === 0) {alert("You lost");  guessesLeft= 9; numberoflosses ++; whatsTyped = [];}
+    if(guessesLeft === 0) {guessesLeft= 9; numberoflosses ++; whatsTyped = [];}
     
     var guessLetteres = "<p>You chose: " + whatsTyped + "</p>";
     var wins = "<p>Wins: " + numberofWins + "</p>";
